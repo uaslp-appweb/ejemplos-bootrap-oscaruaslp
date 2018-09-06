@@ -10,35 +10,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
-    <title>Galeria!</title>
+    <title>Galería</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="text-center">
-            Galeria de Imagenes
-        </div>
-        <div class="card-columns">
+        <h1 class="text-center">Galería de Imágenes</h1>
+
+        <div class="card-columns" id="galeria">          
+
+            <!--
             <div class="card">
-                <a href="#modal1" data-toggle="modal">
-                    <img src="1.jpg" class="card-img-top" alt="">
-                </a>
-                <div class="modal fade" id="modal1">
+                <img src="img/2.jpg" alt="" class="card-img-top">
+            </div>
+
+
+            <div class="card">
+                <img src="img/3.jpg" alt="" class="card-img-top">
+            </div>
+            -->
+
+        </div>
+    </div>
+
+    <script>
+        var galeria = document.getElementById('galeria');
+        var imagen = 1;
+        
+        for (imagen = 1; imagen < 12; imagen++)
+        {
+            galeria.innerHTML += `<div class="card">
+                <a href="#modal${imagen}" data-toggle="modal"><img src="img/${imagen}.jpg" alt="" class="card-img-top"></a>
+                <div class="modal fade" id="modal${imagen}">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content">
-                            <img class="img-fluid" src="1.jpg" alt="">
+                            <img src="img/${imagen}.jpg" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="2.jpg" class="card-img-top" alt="">
-            </div>
-            <div class="card">
-                <img src="3.jpg" class="card-img-top" alt="">
-            </div>
-        </div>
-    </div>
+            </div>`;
+        }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
